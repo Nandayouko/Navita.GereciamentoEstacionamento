@@ -1,0 +1,40 @@
+--Banco SQLSERVER 
+create database if not exists estacionamentodb;
+
+use estacionamentodb;
+
+CREATE TABLE estabelecimento (
+    estabelecimentoid int PRIMARY KEY IDENTITY (1, 1),
+    nome varchar(100) NOT NULL,
+    cnpj varchar(16)NOT NULL,
+	endereco varchar(250)NOT NULL,
+	telefone varchar(11)NOT NULL,
+	qtVagaMoto int NOT NULL,
+	qtVagaCar int NOT NULL
+	);
+
+INSERT INTO estabelecimento 
+values ('Parking', '88464318000174', 'Rua do Socorro 658', '1120548796', 30, 50),
+('Estacione Aqui', '93267612000126', 'Avenida São Miguel 8797', '1120548721', 20, 100);
+
+CREATE TABLE Veiculo (
+	veiculoID INT PRIMARY KEY IDENTITY (1, 1),
+    marca varchar(30) NOT NULL,
+    modelo varchar(30) NOT NULL,
+	cor varchar(20) NOT NULL,
+	placa varchar(7) NOT NULL,
+	tipo varchar (5) NOT NULL	
+	);
+
+Insert into Veiculo
+values ('Ford', 'Eco sport', 'vermelho', 'FUI4547', 'carro'),
+		('Chevrolet', 'Prisma', 'prata', 'AJA2565', 'carro'),
+		('Suzuki', 'Burgman', 'amarela', 'FGC2158', 'moto'),
+		('Suzuki', 'Hayabusa', 'roxo', 'OXI2358', 'moto');
+
+Select * from EmpresaEstacionamento;
+
+Select * from Veiculo;
+
+
+ 
